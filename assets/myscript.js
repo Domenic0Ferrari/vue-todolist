@@ -44,11 +44,15 @@ const app = Vue.createApp({
             let cleanedTodo = this.newTodo.trim();
             // trim rimuove gli spazi bianchi
             if(cleanedTodo.length >= 5){
-                this.toDos.unshift(cleanedTodo);
+                this.toDos.unshift({
+                    text: this.newTodo,
+                    done: false,
+                });
                 // unshift aggiunge elemento
                 this.newTodo = '';
                 this.inputError = false; 
             } else{
+                console.log('Troppo corta');
                 this.inputError = true;
             }
         },
