@@ -10,6 +10,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    margin: 2rem 0;
     gap: 1rem;
+}
+.container{
+    max-width: 900px;
+    height: 500px;
+    margin-inline: auto;
+    border: 5px solid black;
+}
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    margin: 2rem 0;
+}
+li{
+    list-style: none;
+    background-color: grey;
+    padding: 1rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.fa-solid{
+    cursor: pointer;
 }

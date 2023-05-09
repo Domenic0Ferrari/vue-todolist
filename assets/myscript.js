@@ -14,3 +14,48 @@ Bonus:
 1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
 2- cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
 */
+const app = Vue.createApp({
+    data(){
+        return{
+            newTodo: '',
+            inputError: false,
+            toDos:[
+                {
+                    text: 'Fare la spesa',
+                    done: true,
+                },
+                {
+                    text: 'Passare lo straccio',
+                    done: false,
+                },
+                {
+                    text: 'Portare fuori il cane',
+                    done: true,
+                },
+                {
+                    text: 'Preparare la valigia',
+                    done: true,
+                },
+            ],
+        }; 
+    },
+    methods: {
+        addTodo(){
+            let cleanedTodo = this.newTodo.trim();
+            // trim rimuove gli spazi bianchi
+            if(cleanedTodo != ''){
+                this.toDos.unshift(cleanedTodo);
+                // unshift aggiunge elemento
+                this.newTodo = '';
+                this.inputError = false; 
+            } else{
+                this.inputError = true;
+            }
+        },
+        deleteItem(index){
+            this.toDos.splice(index, 1);
+        }
+    }
+});
+
+app.mount("#app");
