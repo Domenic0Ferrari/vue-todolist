@@ -58,8 +58,15 @@ const app = Vue.createApp({
         },
         deleteItem(index){
             this.toDos.splice(index, 1);
-        }
+        },
+        invertDone(index){
+            this.toDos[index].done =! this.toDos[index].done;
+            console.log('Hai cliccato in posizione ' + [index])
     }
+}
+
 });
 
 app.mount("#app");
+
+// usare todo.done, poi

@@ -33,9 +33,16 @@ li{
     display: flex;
     justify-content: space-between;
 }
+.textdecoration{
+    text-decoration: line-through;
+    color: white;
+}
 .fa-solid{
     cursor: pointer;
 }
 h2{
     text-align: center;
+}
+.textdecoration{
+    text-decoration: line-through;
 }

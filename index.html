@@ -32,7 +32,13 @@
             </div>
             <div>
                 <ul v-if="toDos.length != 0">
-                    <li v-for="(todo, index) in toDos">
+                    <li 
+                    v-for="(todo, index) in toDos"
+                    :class="{
+                        textdecoration: todo.done
+                    }"
+                    @click="invertDone(index)"
+                    >
                         {{ todo.text }}
                         <i
                         @click="deleteItem" 
