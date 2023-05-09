@@ -43,7 +43,7 @@ const app = Vue.createApp({
         addTodo(){
             let cleanedTodo = this.newTodo.trim();
             // trim rimuove gli spazi bianchi
-            if(cleanedTodo != ''){
+            if(cleanedTodo.length >= 5){
                 this.toDos.unshift(cleanedTodo);
                 // unshift aggiunge elemento
                 this.newTodo = '';

@@ -18,7 +18,8 @@
         
         <div class="container">
             <div class="search">
-                <input 
+                <input
+                @keyup.enter="addTodo"
                 v-model="newTodo"
                 type="text"
                 placeholder="Nuovo elemento"
@@ -30,7 +31,7 @@
                 </button>
             </div>
             <div>
-                <ul>
+                <ul v-if="toDos.length != 0">
                     <li v-for="(todo, index) in toDos">
                         {{ todo.text }}
                         <i
@@ -39,6 +40,7 @@
                         ></i>
                     </li>
                 </ul>
+                <h2 v-else>Non ci sono Tasks</h2>
             </div>
         </div>
     </div>
